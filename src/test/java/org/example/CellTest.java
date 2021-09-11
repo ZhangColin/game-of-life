@@ -141,4 +141,13 @@ public class CellTest {
 
         Assert.assertTrue(newCell.isDead());
     }
+
+    @Test
+    public void cell_turn_when_cell_is_live_and_near_count_greater_three_then_cell_is_dead() {
+        Cell originCell = new Cell(0,0, true);
+
+        Cell newCell = originCell.turn(4);
+
+        Assert.assertTrue(newCell.isDead());
+    }
 }

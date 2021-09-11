@@ -37,6 +37,8 @@ public class Cell {
             newCellLive = false;
         } else if (nearCount == 3) {
             newCellLive = true;
+        } else if (nearCount > 3) {
+            newCellLive = false;
         } else {
             newCellLive = live;
         }
