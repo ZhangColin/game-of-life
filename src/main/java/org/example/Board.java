@@ -2,6 +2,9 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * @author colin
@@ -25,7 +28,9 @@ public class Board {
     }
 
     public void turn() {
-
+        cells = cells.stream()
+                .map(cell -> cell.turn((int)cells.stream().filter(targetCell->targetCell.isLive() && cell.isNear(targetCell)).count()))
+                .collect(toList());
     }
 
     public String[][] currentStatus() {

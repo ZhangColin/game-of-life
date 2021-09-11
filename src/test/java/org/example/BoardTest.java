@@ -25,4 +25,23 @@ public class BoardTest {
                 {"O", "O", "O"}
         });
     }
+
+    @Test
+    public void less_two_case_2() {
+        Board board = new Board(new String[][]{
+                {"O", "O", "O"},
+                {"O", "X", "O"},
+                {"O", "O", "O"}
+        });
+
+        board.turn();
+
+        String[][] result = board.currentStatus();
+
+        Assert.assertArrayEquals(result, new String[][]{
+                {"O", "O", "O"},
+                {"O", "O", "O"},
+                {"O", "O", "O"}
+        });
+    }
 }
