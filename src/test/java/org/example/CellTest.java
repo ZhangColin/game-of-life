@@ -22,4 +22,12 @@ public class CellTest {
 
         Assert.assertFalse(originCell.isNear(targetCell));
     }
+
+    @Test
+    public void cell_1_0_isNear_cell_0_0() {
+        Cell originCell = new Cell(0, 0, true);
+        Cell targetCell = new Cell(1, 0, true);
+
+        Assert.assertTrue(originCell.isNear(targetCell));
+    }
 }
