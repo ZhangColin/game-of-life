@@ -27,6 +27,7 @@ public class Cell {
     }
 
     public boolean isNear(Cell targetCell) {
-        return (targetCell.column-column)<=1;
+        return (targetCell.column - column) <= 1
+                && (targetCell.row - row) <= 1;
     }
 }
