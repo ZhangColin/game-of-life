@@ -27,6 +27,10 @@ public class Cell {
     }
 
     public boolean isNear(Cell targetCell) {
+        if (targetCell.row == row && targetCell.column == column) {
+            return false;
+        }
+
         return ((targetCell.column - column) <= 1 && (targetCell.column - column) >= -1)
                 && ((targetCell.row - row) <= 1 && (targetCell.row - row) >= -1);
     }
