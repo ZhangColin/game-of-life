@@ -6,12 +6,12 @@ package org.example;
 public class Cell {
     private final int row;
     private final int column;
-    private final boolean isLive;
+    private final boolean live;
 
-    public Cell(int row, int column, boolean isLive) {
+    public Cell(int row, int column, boolean live) {
         this.row = row;
         this.column = column;
-        this.isLive = isLive;
+        this.live = live;
     }
 
     public int getRow() {
@@ -22,8 +22,16 @@ public class Cell {
         return column;
     }
 
-    public boolean isLive() {
-        return isLive;
+    public boolean isLive(){
+        return live;
+    }
+
+    public boolean isDead() {
+        return !live;
+    }
+
+    public Cell turn(int nearCount) {
+        return new Cell(row, column, false);
     }
 
     public boolean isNear(Cell targetCell) {
