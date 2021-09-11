@@ -27,11 +27,12 @@ public class Cell {
     }
 
     public boolean isNear(Cell targetCell) {
-        if (targetCell.row == row && targetCell.column == column) {
-            return false;
-        }
+        return !isSameCell(targetCell)
+                && Math.abs(targetCell.column - column) <= 1
+                && Math.abs(targetCell.row - row) <= 1;
+    }
 
-        return ((targetCell.column - column) <= 1 && (targetCell.column - column) >= -1)
-                && ((targetCell.row - row) <= 1 && (targetCell.row - row) >= -1);
+    private boolean isSameCell(Cell targetCell) {
+        return targetCell.row == row && targetCell.column == column;
     }
 }
