@@ -22,7 +22,7 @@ public class Cell {
         return column;
     }
 
-    public boolean isLive(){
+    public boolean isLive() {
         return live;
     }
 
@@ -33,14 +33,12 @@ public class Cell {
     public Cell turn(int nearCount) {
         boolean newCellLive;
 
-        if (nearCount < 2) {
-            newCellLive = false;
+        if (nearCount == 2) {
+            newCellLive = live;
         } else if (nearCount == 3) {
             newCellLive = true;
-        } else if (nearCount > 3) {
-            newCellLive = false;
         } else {
-            newCellLive = live;
+            newCellLive = false;
         }
 
         return new Cell(row, column, newCellLive);
