@@ -96,4 +96,13 @@ public class CellTest {
 
         Assert.assertTrue(newCell.isDead());
     }
+
+    @Test
+    public void cell_turn_when_cell_is_dead_and_near_count_equals_two_then_cell_is_dead() {
+        Cell originCell = new Cell(0,0, false);
+
+        Cell newCell = originCell.turn(2);
+
+        Assert.assertTrue(newCell.isDead());
+    }
 }
