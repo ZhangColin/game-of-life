@@ -234,4 +234,80 @@ public class BoardTest {
                 {"O", "X", "O"}
         });
     }
+
+    @Test
+    public void greater_three_case_1() {
+        Board board = new Board(new String[][]{
+                {"O", "X", "O"},
+                {"X", "O", "X"},
+                {"O", "X", "O"}
+        });
+
+        board.turn();
+
+        String[][] result = board.currentStatus();
+
+        Assert.assertArrayEquals(result, new String[][]{
+                {"O", "X", "O"},
+                {"X", "O", "X"},
+                {"O", "X", "O"}
+        });
+    }
+
+    @Test
+    public void greater_three_case_2() {
+        Board board = new Board(new String[][]{
+                {"O", "X", "O"},
+                {"X", "X", "X"},
+                {"O", "X", "O"}
+        });
+
+        board.turn();
+
+        String[][] result = board.currentStatus();
+
+        Assert.assertArrayEquals(result, new String[][]{
+                {"X", "X", "X"},
+                {"X", "O", "X"},
+                {"X", "X", "X"}
+        });
+    }
+
+    @Test
+    public void greater_three_case_3() {
+        Board board = new Board(new String[][]{
+                {"X", "O", "X"},
+                {"O", "O", "O"},
+                {"X", "O", "X"}
+        });
+
+        board.turn();
+
+        String[][] result = board.currentStatus();
+
+        Assert.assertArrayEquals(result, new String[][]{
+                {"O", "O", "O"},
+                {"O", "O", "O"},
+                {"O", "O", "O"}
+        });
+    }
+
+    @Test
+    public void greater_three_case_4() {
+        Board board = new Board(new String[][]{
+                {"X", "O", "X"},
+                {"O", "X", "O"},
+                {"X", "O", "X"}
+        });
+
+        board.turn();
+
+        String[][] result = board.currentStatus();
+
+        Assert.assertArrayEquals(result, new String[][]{
+                {"O", "X", "O"},
+                {"X", "O", "X"},
+                {"O", "X", "O"}
+        });
+    }
 }
