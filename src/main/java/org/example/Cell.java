@@ -31,7 +31,16 @@ public class Cell {
     }
 
     public Cell turn(int nearCount) {
-        return new Cell(row, column, false);
+        boolean newCellLive;
+
+        if (nearCount < 2) {
+            newCellLive = false;
+        }
+        else {
+            newCellLive = live;
+        }
+
+        return new Cell(row, column, newCellLive);
     }
 
     public boolean isNear(Cell targetCell) {
