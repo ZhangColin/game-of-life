@@ -54,4 +54,12 @@ public class CellTest {
 
         Assert.assertFalse(originCell.isNear(targetCell));
     }
+
+    @Test
+    public void cell_1_2_isNear_cell_2_2() {
+        Cell originCell = new Cell(2, 2, true);
+        Cell targetCell = new Cell(1, 2, true);
+
+        Assert.assertTrue(originCell.isNear(targetCell));
+    }
 }
